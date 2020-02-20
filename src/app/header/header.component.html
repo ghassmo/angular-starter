@@ -1,0 +1,13 @@
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span class="spacer"></span>
+        <button mat-icon-button><mat-icon color="accent">list</mat-icon></button>
+        <button mat-icon-button (click)="onChangeMode()">
+            <mat-icon color="accent">{{isDarkMode ? 'brightness_5' : 'brightness_2'}}</mat-icon>
+        </button>
+        <button mat-icon-button (click)="openDialog()">
+            <mat-icon color="accent">account_circle</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
