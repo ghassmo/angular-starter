@@ -10,8 +10,6 @@ import { AuthComponent } from '../auth/auth.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  email: String;
-  username: String;
   isDarkMode: boolean = false;
   constructor(private themeSr: ThemeService, public dialog: MatDialog) { }
 

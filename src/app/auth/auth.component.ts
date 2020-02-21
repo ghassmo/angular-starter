@@ -4,7 +4,6 @@ import { ThemeService } from '../theme.service';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { validateBasis } from '@angular/flex-layout';
-import { authData } from './authData';
 
 @Component({
   selector: 'app-auth',
