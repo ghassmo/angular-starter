@@ -1,18 +1,17 @@
 <div fxFlexFill [ngClass]="{'dark-theme': isDarkMode}">
-
-    <h2>{{isSignUp ? 'Sign Up' : 'Login'}}</h2>
+    <h1 mat-dialog-title>{{isSignUp ? 'Sign Up' : 'Login'}}</h1>
     <div>
-        <form>
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
 
             <mat-form-field color="accent" appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Enter your email" type="email">
+                <input matInput formControlName="email" placeholder="Enter your email" type="email">
                 <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
 
             <mat-form-field color="accent" appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                <input matInput formControlName="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -21,14 +20,14 @@
 
             <mat-form-field *ngIf="isSignUp" color="accent" appearance="outline">
                 <mat-label>Confirm</mat-label>
-                <input matInput placeholder="Confirm your password" type="password">
+                <input matInput formControlName="cpassword" placeholder="Confirm your password" type="password">
+                <mat-hint *ngIf="isNotMatch" align="start"><strong>Password didn't match</strong> </mat-hint>
             </mat-form-field>
-
             <div fxLayout="row" fxLayoutAlign="space-between start">
-                <button mat-flat-button
+                <button type="button" mat-flat-button
                     (click)="isSignUp = !isSignUp">{{isSignUp ? 'Login Instead!' : 'Create New Account!'  }}</button>
-                <button mat-stroked-button>{{isSignUp ? 'Sign up' : 'Login'}}</button>
-            </div>
+                <button [disabled]="!authForm.valid" type="submit" mat-stroked-button>{{isSignUp ? 'Sign up' : 'Login'}}</button>
+            </div>  
         </form>
 
 

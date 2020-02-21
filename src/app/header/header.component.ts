@@ -11,6 +11,8 @@ import { AuthComponent } from '../auth/auth.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  email: String;
+  username: String;
   isDarkMode: boolean = false;
   constructor(private themeSr: ThemeService, public dialog: MatDialog) { }
 
@@ -24,14 +26,11 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialog(): void {
+
     const dialogRef = this.dialog.open(AuthComponent, {
       width: '350px',
-      data: new authData(),
-      panelClass: this.isDarkMode ? ["dark-theme"]: null,
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      data: null,
+      panelClass: this.isDarkMode ? ["dark-theme"] : null,
     });
   }
 

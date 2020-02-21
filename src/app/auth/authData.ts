@@ -1,4 +1,3 @@
 export class authData {
-  username: string;
-  password: string;
+  constructor(public email: String, public username: String){};
 }
