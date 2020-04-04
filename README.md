@@ -11,5 +11,6 @@
     - Angular Material
     - Angular Flex Layout
 
-![screen shot ](/screen_shot2.png)
-![screen shot ](/screen_shot.png)
+<img src="screen_shot2.png" width="300px" />
+<img src="screen_shot.png" width="300px" />
+
