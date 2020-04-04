@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ThemeService } from '../theme.service';
-import { Subscription } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { validateBasis } from '@angular/flex-layout';
+
+import { Subscription } from 'rxjs';
+
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +16,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   isSignUp: boolean = false;
   isDarkMode: boolean;
   subr: Subscription;
-  
+
   isNotMatch: boolean = false;
 
 
@@ -23,7 +24,7 @@ export class AuthComponent implements OnInit, OnDestroy {
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required, Validators.minLength(6)]),
     cpassword: new FormControl("", [Validators.minLength(6),]),
-  }, );
+  });
 
   constructor(private themeSr: ThemeService,
     public dialogRef: MatDialogRef<AuthComponent>) { }
@@ -51,10 +52,10 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     if (this.isSignUp) {
-      if (!this.checkPass()) { 
+      if (!this.checkPass()) {
         this.isNotMatch = true;
         return;
-       }
+      }
     }
     this.onNoClick();
   }

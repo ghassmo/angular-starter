@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ThemeService } from '../theme.service';
-import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+
+import { ThemeService } from '../theme.service';
 import { AuthComponent } from '../auth/auth.component';
 
 @Component({
