@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ThemeService } from '../theme.service';
-import { AuthComponent } from '../auth/auth.component';
+import { ThemeService } from '../../theme.service';
+import { AuthDialogComponent } from '../../auth/auth-dialog/auth-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -23,8 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialog(): void {
-
-    const dialogRef = this.dialog.open(AuthComponent, {
+    const dialogRef = this.dialog.open(AuthDialogComponent, {
       width: '350px',
       data: null,
       panelClass: this.isDarkMode ? ["dark-theme"] : null,

@@ -1,35 +1,3 @@
-<div fxFlexFill [ngClass]="{'dark-theme': isDarkMode}">
-    <h1 mat-dialog-title>{{isSignUp ? 'Sign Up' : 'Login'}}</h1>
-    <div>
-        <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
-
-            <mat-form-field color="accent" appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="email" placeholder="Enter your email" type="email">
-                <mat-icon matSuffix>email</mat-icon>
-            </mat-form-field>
-
-            <mat-form-field color="accent" appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput formControlName="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-            </mat-form-field>
-
-            <mat-form-field *ngIf="isSignUp" color="accent" appearance="outline">
-                <mat-label>Confirm</mat-label>
-                <input matInput formControlName="cpassword" placeholder="Confirm your password" type="password">
-                <mat-hint *ngIf="isNotMatch" align="start"><strong>Password didn't match</strong> </mat-hint>
-            </mat-form-field>
-            <div fxLayout="row" fxLayoutAlign="space-between start">
-                <button type="button" mat-flat-button
-                    (click)="isSignUp = !isSignUp">{{isSignUp ? 'Login Instead!' : 'Create New Account!'  }}</button>
-                <button [disabled]="!authForm.valid" type="submit" mat-stroked-button>{{isSignUp ? 'Sign up' : 'Login'}}</button>
-            </div>  
-        </form>
-
-
-    </div>
+<div class="auth-page">
+    <app-auth-content></app-auth-content>
 </div>

@@ -1,17 +1,15 @@
 <div fxFlexFill [ngClass]="{'dark-theme': isDarkMode}" class="mat-app-background">
-    <div>
-        <app-header></app-header>
-        <div fxLayout="row wrap" fxLayoutGap.gt-sm="30px" fxLayoutAlign="center start">
-            <div style="padding-top: 30px;" fxFlex="50%" fxFlex.lt-md="90% ">
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
-                agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-                agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
-                agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
-                agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+    <app-header></app-header>
+
+    <div fxLayout="row wrap" fxLayoutGap.gt-sm="30px" fxLayoutAlign="center start" class="container">
+        <div fxFlex="50%" fxFlex.lt-md="90% ">
+            <div class="examples">
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip [routerLink]="['/']">Home Page</mat-chip>
+                    <mat-chip [routerLink]="['/auth']">Login Page</mat-chip>
+                </mat-chip-list>
             </div>
+            <router-outlet></router-outlet>
         </div>
-        <router-outlet></router-outlet>
     </div>
 </div>

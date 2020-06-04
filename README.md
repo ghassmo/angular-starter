@@ -1,10 +1,12 @@
-# Angular Starter 
+# Angular Material Starter 
 
-## Components 
+## Features 
+    - Home Module
     - Auth Module
     - Dashboard Module
     - Shared Module
     - Login & Sign Up Dialog
+    - Login & Sign Up Page
     - Theme Service 
 
 ### Dependencies
